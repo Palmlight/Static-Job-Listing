@@ -58,8 +58,8 @@ span {
 }
 .container {
     display: grid;
-    grid-template-rows: 130px auto 100px;
-    // grid-gap: 1rem;
+    grid-template-rows: 130px auto 20px;
+    
 
 }
 header {
@@ -86,12 +86,12 @@ header {
 
 .job-card {
     box-shadow: $shadow;
-    background-color: $Light-Grayish-Cyan2;
+    background-color: #fff;
     display: flex;
     padding: 1.5rem 2rem;
     align-items: center;
     justify-content: center;
-
+    margin-bottom: 20px;
     .logo-container {
         // flex: 1;
         margin-right: 20px;

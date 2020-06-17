@@ -46,7 +46,7 @@ span {
 
 .container {
   display: grid;
-  grid-template-rows: 130px auto 100px;
+  grid-template-rows: 130px auto 20px;
 }
 
 header {
@@ -72,11 +72,12 @@ header::after {
 
 .job-card {
   box-shadow: 1px 29px 33px -45px #5ba4a4;
-  background-color: #eef6f6;
+  background-color: #fff;
   display: flex;
   padding: 1.5rem 2rem;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .job-card .logo-container {
