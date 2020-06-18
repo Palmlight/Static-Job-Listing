@@ -20,6 +20,18 @@
   color: #7b8e8e;
 }
 
+.languages {
+  color: #5ba4a4;
+  font-weight: 700;
+  padding: 0.375rem 0.75rem;
+  background-color: #effafa;
+  margin-left: 10px;
+}
+
+.search-languages {
+  padding-right: 0;
+}
+
 *,
 ::before,
 ::after {
@@ -46,7 +58,7 @@ span {
 
 .container {
   display: grid;
-  grid-template-rows: 130px auto 20px;
+  grid-template-rows: 130px 40px auto 20px;
 }
 
 header {
@@ -61,6 +73,26 @@ header::after {
   height: 100%;
   top: 0;
   position: absolute;
+}
+
+.search {
+  box-shadow: 1px 29px 33px -30px #5ba4a4;
+  background-color: #fff;
+  width: 1440px;
+  padding: 3rem 5rem;
+  width: 1440px;
+  max-width: 80vw;
+  margin: -40px auto;
+  position: relative;
+  display: flex;
+}
+
+.search * {
+  flex: 1;
+}
+
+.search .remove {
+  background-color: #5ba4a4;
 }
 
 .listing {
@@ -127,14 +159,6 @@ header::after {
   justify-content: flex-end;
   flex-flow: row wrap;
   flex: 1;
-}
-
-.job-card .skills .languages {
-  color: #5ba4a4;
-  font-weight: 700;
-  padding: 0.375rem 0.75rem;
-  background-color: #effafa;
-  margin-left: 10px;
 }
 
 .attribution {

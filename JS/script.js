@@ -155,8 +155,9 @@ const jobs = [
    
 const jobListing = document.querySelector(".listing")
 
-window.addEventListener("DOMContentLoaded", () => {
-    let displayJobs = jobs.map(j => {
+
+let displayJob = (job) => {
+    let displayJobs = job.map(j => {
         return `<article class="job-card">
 
         <!-- Logo Container -->
@@ -202,9 +203,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
         <!-- End of an Article tag -->
       </article>`;
+
     })
 
     displayJobs = displayJobs.join("");
     // console.log(displayJobs);
     jobListing.innerHTML = displayJobs;
+}
+
+
+
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    
+        displayJob(jobs);
+
+   
 })
