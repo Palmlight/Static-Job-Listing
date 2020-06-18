@@ -154,16 +154,20 @@ const jobs = [
   //Getting the parent element
    
 const jobListing = document.querySelector(".listing")
-const jobFilter = document.querySelectorAll(".search-languages")
+const jobFilter = document.querySelectorAll(".search-buttons")
 
 
 // Load all items
-let displayJob = (job) => {
+let displayJob = job => {
     
-
     let displayJobs = job.map(j => {
 
         let newJob =j.new ? "New" : "";
+        let featured = j.featured ? "Feautured" : "";
+
+        let newJobTemp = newJob ? `<span class="tag new">${newJob}</span>` : "";
+        let featuredTemp = featured ? `<span class="tag featured">${featured}</span>` : "";
+
 
         return `<article class="job-card">
 
@@ -177,8 +181,8 @@ let displayJob = (job) => {
 
           <div>
             <h3 class="company">${j.company}</h3>
-            <span class="tag new">${newJob}</span>
-            <span class="tag featured">${j.featured}</span>
+            ${newJobTemp}
+            ${featuredTemp}
           </div>
           
 
@@ -212,16 +216,38 @@ let displayJob = (job) => {
       </article>`;
 
     })
-
     displayJobs = displayJobs.join("");
-    // console.log(displayJobs);
+    
     jobListing.innerHTML = displayJobs;
 }
+
 
 //Filter items 
 jobFilter.forEach(btn => {
     btn.addEventListener("click", e => {
-        console.log(e.currentTarget.dataset)
+        
+        const category = e.currentTarget.dataset.id;
+
+        // console.log(category) 
+
+        const jobCategory = jobs.filter (jobItem => {
+            if (category === jobItem.role ) {
+                return jobItem;
+            }
+            if (category === jobItem.level) {
+                return jobItem;
+            }
+            if (category === jobItem.languages[0]) {
+                return jobItem;
+            }
+            if (category === "Reset") {
+                return jobItem;
+            }
+        });
+        
+       
+        displayJob(jobCategory)
+        
     })
 })  
 
@@ -233,6 +259,6 @@ jobFilter.forEach(btn => {
 window.addEventListener("DOMContentLoaded", () => {
     
         displayJob(jobs);
-
+        
    
 })
