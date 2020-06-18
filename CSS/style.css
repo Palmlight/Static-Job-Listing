@@ -11,6 +11,12 @@
   margin: auto 0 auto 6px;
 }
 
+@media screen and (max-width: 800px) {
+  .tag {
+    margin-left: 0;
+  }
+}
+
 .list-span {
   display: list-item;
   list-style: disc;
@@ -28,6 +34,12 @@
   margin-left: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .languages {
+    margin-bottom: 10px;
+  }
 }
 
 .languages:hover {
@@ -91,7 +103,6 @@ header::after {
   background-color: #fff;
   width: 1440px;
   padding: 3rem 5rem;
-  width: 1440px;
   max-width: 80vw;
   margin: -40px auto;
   position: relative;
@@ -111,6 +122,16 @@ header::after {
   height: 0.9rem;
 }
 
+@media screen and (max-width: 800px) {
+  .search {
+    padding: 1rem 20px;
+  }
+  .search .search-buttons {
+    flex-wrap: row-wrap;
+    margin-bottom: 5px;
+  }
+}
+
 .search .clear p {
   flex: 1;
   display: flex;
@@ -125,6 +146,13 @@ header::after {
 .search .clear p:hover {
   padding-bottom: 3px;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+  .search .clear {
+    justify-content: center;
+    margin: auto;
+  }
 }
 
 .listing {
@@ -144,8 +172,25 @@ header::after {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 800px) {
+  .job-card {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+}
+
 .job-card .logo-container {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .job-card .logo-container {
+    margin-top: -40px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 
 .job-card .logo-container .logo {
@@ -157,11 +202,25 @@ header::after {
   flex-basis: 250px;
 }
 
+@media screen and (max-width: 800px) {
+  .job-card .details {
+    flex-basis: 170px;
+    margin-bottom: 10px;
+  }
+}
+
 .job-card .details h3.company {
   display: inline-block;
   color: #5ba4a4;
   margin-right: 12px;
   text-transform: capitalize;
+}
+
+@media screen and (max-width: 800px) {
+  .job-card .details h3.company {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .job-card .details .featured {
@@ -196,6 +255,13 @@ header::after {
   justify-content: flex-end;
   flex-flow: row wrap;
   flex: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .job-card .skills {
+    justify-content: flex-start;
+    flex-basis: 100%;
+  }
 }
 
 .attribution {

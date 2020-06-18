@@ -160,23 +160,29 @@ const jobFilter = document.querySelectorAll(".search-buttons")
 let displayJob = job => {
     
     let displayJobs = job.map(j => {
-
+        
+        // Selection of the new/featured tag on the job 
         let newJob =j.new ? "New" : "";
         let featured = j.featured ? "Feautured" : "";
 
+        // checks for if new or featured
         let newJobTemp = newJob ? `<span class="tag new">${newJob}</span>` : "";
         let featuredTemp = featured ? `<span class="tag featured">${featured}</span>` : "";
 
+        // languages the developer can use
         let languageTemp = "";
         
         for (let language of j.languages) {
           languageTemp += `<span class="languages">${language}</span>`
         }
 
+        // tools the developer can use 
         let toolTemp = "";
         for (let tool of j.tools) {
           toolTemp += `<span class="languages">${tool}</span>`
         }
+
+        // the returned item
 
         return `<article class="job-card">
 
@@ -221,6 +227,7 @@ let displayJob = job => {
       </article>`;
 
     })
+    
     displayJobs = displayJobs.join("");
     
     jobListing.innerHTML = displayJobs;
@@ -228,12 +235,12 @@ let displayJob = job => {
 
 //Filter items 
 jobFilter.forEach(btn => {
+
     btn.addEventListener("click", e => {
         
         const category = e.currentTarget.dataset.id;
 
-        // console.log(category) 
-
+        // Streamlining Job Search
         const jobCategory = jobs.filter (jobItem => {
             if (category === jobItem.role ) {
                 return jobItem;
@@ -269,6 +276,5 @@ jobFilter.forEach(btn => {
 window.addEventListener("DOMContentLoaded", () => {
     
         displayJob(jobs);
-        
    
 })
