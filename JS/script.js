@@ -154,10 +154,17 @@ const jobs = [
   //Getting the parent element
    
 const jobListing = document.querySelector(".listing")
+const jobFilter = document.querySelectorAll(".search-languages")
 
 
+// Load all items
 let displayJob = (job) => {
+    
+
     let displayJobs = job.map(j => {
+
+        let newJob =j.new ? "New" : "";
+
         return `<article class="job-card">
 
         <!-- Logo Container -->
@@ -170,7 +177,7 @@ let displayJob = (job) => {
 
           <div>
             <h3 class="company">${j.company}</h3>
-            <span class="tag new">${j.new}</span>
+            <span class="tag new">${newJob}</span>
             <span class="tag featured">${j.featured}</span>
           </div>
           
@@ -210,6 +217,14 @@ let displayJob = (job) => {
     // console.log(displayJobs);
     jobListing.innerHTML = displayJobs;
 }
+
+//Filter items 
+jobFilter.forEach(btn => {
+    btn.addEventListener("click", e => {
+        console.log(e.currentTarget.dataset)
+    })
+})  
+
 
 
 

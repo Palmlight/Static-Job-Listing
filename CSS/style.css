@@ -26,10 +26,21 @@
   padding: 0.375rem 0.75rem;
   background-color: #effafa;
   margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.languages:hover {
+  color: #fff;
+  background-color: #5ba4a4;
 }
 
 .search-languages {
-  padding-right: 0;
+  padding: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: inherit;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 *,
@@ -93,6 +104,27 @@ header::after {
 
 .search .remove {
   background-color: #5ba4a4;
+  padding: 0.375rem 5px 0 5px;
+}
+
+.search .remove #close {
+  height: 0.9rem;
+}
+
+.search .clear p {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #5ba4a4;
+  cursor: pointer;
+}
+
+.search .clear p:hover {
+  padding-bottom: 3px;
+  text-decoration: underline;
 }
 
 .listing {
@@ -143,6 +175,11 @@ header::after {
 .job-card .details .positions .position {
   color: #2c3a3a;
   text-transform: capitalize;
+  cursor: pointer;
+}
+
+.job-card .details .positions .position:hover {
+  color: #5ba4a4;
 }
 
 .job-card .details .final {
