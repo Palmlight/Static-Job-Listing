@@ -201,6 +201,7 @@ header::after {
 .attribution {
   font-size: 11px;
   text-align: center;
+  position: relative;
 }
 
 .attribution a {

@@ -110,7 +110,7 @@ header {
     margin: -40px auto ;
     position: relative;
     display: flex;
-
+    // display: none;
     * {
         flex: 1;
     }
@@ -222,5 +222,5 @@ header {
        
     }
 }
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; position: relative;}
 .attribution a { color: hsl(228, 45%, 44%); }

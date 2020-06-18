@@ -156,7 +156,6 @@ const jobs = [
 const jobListing = document.querySelector(".listing")
 const jobFilter = document.querySelectorAll(".search-buttons")
 
-
 // Load all items
 let displayJob = job => {
     
@@ -168,6 +167,16 @@ let displayJob = job => {
         let newJobTemp = newJob ? `<span class="tag new">${newJob}</span>` : "";
         let featuredTemp = featured ? `<span class="tag featured">${featured}</span>` : "";
 
+        let languageTemp = "";
+        
+        for (let language of j.languages) {
+          languageTemp += `<span class="languages">${language}</span>`
+        }
+
+        let toolTemp = "";
+        for (let tool of j.tools) {
+          toolTemp += `<span class="languages">${tool}</span>`
+        }
 
         return `<article class="job-card">
 
@@ -204,12 +213,8 @@ let displayJob = job => {
         <!-- Skillset -->
 
         <div class="skills">
-          <span class="languages">${j.languages[0]}</span>
-          <span class="languages">${j.languages[1]}</span>
-          <span class="languages">${j.languages[2]}</span>
-          <span class="languages">${j.languages[3]}</span>
-          <span class="languages">${j.languages[4]}</span>
-
+          ${languageTemp}
+          ${toolTemp}
         </div>
 
         <!-- End of an Article tag -->
@@ -220,7 +225,6 @@ let displayJob = job => {
     
     jobListing.innerHTML = displayJobs;
 }
-
 
 //Filter items 
 jobFilter.forEach(btn => {
@@ -237,12 +241,23 @@ jobFilter.forEach(btn => {
             if (category === jobItem.level) {
                 return jobItem;
             }
-            if (category === jobItem.languages[0]) {
-                return jobItem;
-            }
+            
             if (category === "Reset") {
                 return jobItem;
             }
+
+            for(let language of jobItem.languages) {
+              if (category === language) {
+                return language;
+              }
+            }
+
+            for(let tool of jobItem.tools) {
+              if (category === tool) {
+                return tool;
+              }
+            }
+
         });
         
        
@@ -250,11 +265,6 @@ jobFilter.forEach(btn => {
         
     })
 })  
-
-
-
-
-
 
 window.addEventListener("DOMContentLoaded", () => {
     
